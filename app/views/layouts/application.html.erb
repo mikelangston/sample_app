@@ -6,9 +6,13 @@
 	<%= stylesheet_link_tag "application", media: "all" %>
 </head>
 <body>
-	
-	<%= yield %>
-	
+	<%= render 'layouts/nav' %>
+
+	<div class="main-content">
+		<%= yield %>
+	</div>
+
+	<%= render 'layouts/footer' %>
 	<%= javascript_include_tag "application" %>
 </body>
 </html>
