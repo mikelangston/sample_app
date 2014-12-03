@@ -41,4 +41,6 @@ gem 'spring',        group: :development
 group :development, :test do
 	gem 'rspec-rails', '~> 3.0.0'
 	gem 'annotate', '~> 2.6.5'
+	gem 'factory_girl'
+	gem 'gravatar_image_tag'
 end

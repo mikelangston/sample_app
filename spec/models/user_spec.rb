@@ -105,5 +105,22 @@ RSpec.describe User, :type => :model do
 				expect(@user.has_password?("invalid")).to be_falsey
 			end
 		end
+
+		describe "authenticate method" do 
+			it "should return nil on email/password mismatch" do
+				wrong_password_user = User.authenticate(@attr[:email], "wrongpass")
+				expect(wrong_password_user).to be_nil
+			end
+
+			it "should return nil for an email with no user" do 
+				nonexistant_user = User.authenticate("bar@foo.com", @attr[:password])
+				expect(nonexistant_user).to be_nil
+			end
+
+			it "should return the user on email/password match" do 
+				matching_user = User.authenticate(@attr[:email], @attr[:password])
+				expect(matching_user) == @user
+			end
+		end
 	end
 end

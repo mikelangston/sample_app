@@ -1,3 +1,12 @@
 <div class="container">
-	<%= @user.name %>, <%= @user.email %>
-</div>
+	<div class="col-md-2">
+		<%= gravatar_for @user, :size => 140 %>
+	</div>
+	<div class="col-md-7">
+		<h1><%= @user.name %></h1>
+	</div>
+	<div class="col-md-3 sidebar">
+		<span><strong>Name</strong> <%= @user.name %></span><br/>
+		<span><strong>URL</strong> <%= link_to user_path(@user), @user %></span>
+	</div>
+</di>
