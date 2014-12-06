@@ -1,12 +1,17 @@
 body{
 	background: #f1f1f1;
-	.main-content{
+	.wrapper{
 		margin-top: 80px;
 		.container{
 			background: #fff;
 			padding-top: 20px;
 			padding-bottom: 40px;
 			border: 1px solid #cccccc;
+			.errors{
+				background: rgba(255,0,0,0.7);
+				padding: 5px;
+				border: 1px solid red;
+			}
 			.sidebar{
 				background: #f1f1f1;
 				padding-top: 10px;
@@ -16,6 +21,10 @@ body{
 		}
 	}
 	footer{
+		&.container{
+			background: none !important;
+			border: none !important;
+		}
 		ul{
 			margin: 5px 0 0 0;
 			padding: 0;

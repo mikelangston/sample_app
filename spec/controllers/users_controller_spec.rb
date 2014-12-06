@@ -9,4 +9,35 @@ RSpec.describe UsersController, :type => :controller do
       		expect(response).to be_success
     	end
   	end
+
+  	#describe "GET 'show'" do 
+  	#	before(:each) do 
+  	#		@user = FactoryGirl.build(:user)
+  	#	end
+	
+	  # it "should be successful" do 
+  	#		get :show, :id => @user
+  	#		expect(response).to be_success
+  	#	end
+
+  	#	it "should find the right user" do 
+  	#		get :show, :id => @user 
+  	#		expect(assigns(:user)) == @user
+  	#	end
+  	#end
+
+    describe "POST 'create'" do 
+      describe "failure" do 
+        before(:each) do 
+          @attr = { :name => "", :email => "", :password => "", :password_confirmation => "" }
+        end
+
+        it "should not create a user" do 
+          expect(lambda do
+            post :create, :user => @attr
+          end).to_not change(User, :count)
+        end
+
+      end
+    end
 end
