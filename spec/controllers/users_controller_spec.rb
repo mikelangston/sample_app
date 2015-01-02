@@ -10,21 +10,21 @@ RSpec.describe UsersController, :type => :controller do
     	end
   	end
 
-  	#describe "GET 'show'" do 
-  	#	before(:each) do 
-  	#		@user = FactoryGirl.build(:user)
-  	#	end
+  	describe "GET 'show'" do 
+  		before(:each) do 
+  			@user = FactoryGirl.create(:user)
+  		end
 	
-	  # it "should be successful" do 
-  	#		get :show, :id => @user
-  	#		expect(response).to be_success
-  	#	end
+	   it "should be successful" do 
+  			get :show, :id => @user
+  			expect(response).to be_success
+  		end
 
-  	#	it "should find the right user" do 
-  	#		get :show, :id => @user 
-  	#		expect(assigns(:user)) == @user
-  	#	end
-  	#end
+  		it "should find the right user" do 
+  			get :show, :id => @user 
+  			expect(assigns(:user)) == @user
+  		end
+  	end
 
     describe "POST 'create'" do 
       describe "failure" do 
